@@ -47,6 +47,29 @@
 				<false/>
 			</dict>
 		</array>
+		<key>893751E6-2E4F-4EB2-8295-C06FD4852A94</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8DD4AC75-AE5B-4303-A693-EA5D7299DD7F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>85753215-C8BA-498A-92A9-8C219242E84A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>8DD4AC75-AE5B-4303-A693-EA5D7299DD7F</key>
 		<array>
 			<dict>
@@ -74,7 +97,7 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>85753215-C8BA-498A-92A9-8C219242E84A</string>
+				<string>0ABB10EF-3DB1-44EE-8613-8A8F223F2C2D</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -84,7 +107,30 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>0ABB10EF-3DB1-44EE-8613-8A8F223F2C2D</string>
+				<string>85753215-C8BA-498A-92A9-8C219242E84A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>DBFAF2D1-686E-4A08-98DE-2CACC081B3E3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8DD4AC75-AE5B-4303-A693-EA5D7299DD7F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>85753215-C8BA-498A-92A9-8C219242E84A</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -101,7 +147,7 @@
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>Washington Post Unfurler</string>
+	<string>News Unfurler</string>
 	<key>objects</key>
 	<array>
 		<dict>
@@ -240,7 +286,7 @@ fi</string>
 				<key>runningsubtext</key>
 				<string>Gathering results...</string>
 				<key>script</key>
-				<string>./unfurl.rb "{query}"</string>
+				<string>./wapo.rb "{query}"</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -260,6 +306,25 @@ fi</string>
 			<string>932D137E-9894-45D6-A929-1EF9B7EF29FE</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>inputstring</key>
+				<string>{query}</string>
+				<key>matchcasesensitive</key>
+				<false/>
+				<key>matchmode</key>
+				<integer>2</integer>
+				<key>matchstring</key>
+				<string>```*</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.filter</string>
+			<key>uid</key>
+			<string>0ABB10EF-3DB1-44EE-8613-8A8F223F2C2D</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -319,21 +384,49 @@ fi</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>inputstring</key>
-				<string>{query}</string>
-				<key>matchcasesensitive</key>
+				<key>alfredfiltersresults</key>
 				<false/>
-				<key>matchmode</key>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>1</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>wsj</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
 				<integer>2</integer>
-				<key>matchstring</key>
-				<string>```*</string>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string>Gathering results...</string>
+				<key>script</key>
+				<string>./wsj.rb "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string>./hltb.rb</string>
+				<key>subtext</key>
+				<string>Example: "mueller" (Hold shift on result to unfurl)</string>
+				<key>title</key>
+				<string>Search Wall Street Journal</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.utility.filter</string>
+			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>0ABB10EF-3DB1-44EE-8613-8A8F223F2C2D</string>
+			<string>893751E6-2E4F-4EB2-8295-C06FD4852A94</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -352,9 +445,56 @@ fi</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>1</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>ars</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>2</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string>Gathering results...</string>
+				<key>script</key>
+				<string>./ars.rb "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string>./hltb.rb</string>
+				<key>subtext</key>
+				<string>Example: "google" (Hold shift on result to unfurl)</string>
+				<key>title</key>
+				<string>Search Ars Techinca</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>DBFAF2D1-686E-4A08-98DE-2CACC081B3E3</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
 	</array>
 	<key>readme</key>
-	<string>Search your favorite topic to find a wapo article about it.
+	<string>Search your favorite news sources.
 
 Hitting enter on an article opens the URL.
 
@@ -366,42 +506,49 @@ Hitting shift before hitting enter pastes the discord unfurl.</string>
 			<key>xpos</key>
 			<integer>220</integer>
 			<key>ypos</key>
-			<integer>250</integer>
+			<integer>120</integer>
 		</dict>
 		<key>233D9B44-AF96-494C-B7F5-05976CA8F253</key>
 		<dict>
 			<key>xpos</key>
-			<integer>610</integer>
+			<integer>500</integer>
 			<key>ypos</key>
-			<integer>180</integer>
+			<integer>160</integer>
 		</dict>
 		<key>5D935144-4864-4D72-93A9-8146112E8B63</key>
 		<dict>
 			<key>xpos</key>
-			<integer>460</integer>
+			<integer>320</integer>
 			<key>ypos</key>
-			<integer>180</integer>
+			<integer>160</integer>
 		</dict>
 		<key>85753215-C8BA-498A-92A9-8C219242E84A</key>
 		<dict>
 			<key>xpos</key>
-			<integer>360</integer>
+			<integer>220</integer>
 			<key>ypos</key>
-			<integer>200</integer>
+			<integer>180</integer>
+		</dict>
+		<key>893751E6-2E4F-4EB2-8295-C06FD4852A94</key>
+		<dict>
+			<key>xpos</key>
+			<integer>40</integer>
+			<key>ypos</key>
+			<integer>210</integer>
 		</dict>
 		<key>8DD4AC75-AE5B-4303-A693-EA5D7299DD7F</key>
 		<dict>
 			<key>xpos</key>
-			<integer>260</integer>
+			<integer>220</integer>
 			<key>ypos</key>
-			<integer>80</integer>
+			<integer>60</integer>
 		</dict>
 		<key>932D137E-9894-45D6-A929-1EF9B7EF29FE</key>
 		<dict>
 			<key>xpos</key>
-			<integer>80</integer>
+			<integer>40</integer>
 			<key>ypos</key>
-			<integer>110</integer>
+			<integer>90</integer>
 		</dict>
 		<key>BDA6722B-CA07-4163-914B-3E80415A3DEF</key>
 		<dict>
@@ -410,20 +557,27 @@ Hitting shift before hitting enter pastes the discord unfurl.</string>
 			<key>note</key>
 			<string>OneUpdater</string>
 			<key>xpos</key>
-			<integer>360</integer>
+			<integer>320</integer>
 			<key>ypos</key>
+			<integer>20</integer>
+		</dict>
+		<key>DBFAF2D1-686E-4A08-98DE-2CACC081B3E3</key>
+		<dict>
+			<key>xpos</key>
 			<integer>40</integer>
+			<key>ypos</key>
+			<integer>330</integer>
 		</dict>
 		<key>EA8C37EE-EB1E-45E1-8DCA-F0131DFE1AEF</key>
 		<dict>
 			<key>xpos</key>
-			<integer>360</integer>
+			<integer>320</integer>
 			<key>ypos</key>
-			<integer>300</integer>
+			<integer>280</integer>
 		</dict>
 	</dict>
 	<key>version</key>
-	<string>0.67</string>
+	<string>0.68</string>
 	<key>webaddress</key>
 	<string>https://newsapi.org</string>
 </dict>
