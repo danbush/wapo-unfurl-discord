@@ -423,7 +423,7 @@ Hitting shift before hitting enter pastes the discord unfurl.</string>
 		</dict>
 	</dict>
 	<key>version</key>
-	<string>0.66</string>
+	<string>0.67</string>
 	<key>webaddress</key>
 	<string>https://newsapi.org</string>
 </dict>

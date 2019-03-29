@@ -26,16 +26,35 @@ initial_search =
 
 all_articles = initial_search["articles"]
 
-all_articles.each do |article|
-  the_subtitle = article["description"].to_s
-  unfurl = "```" + article["title"].to_s + "\n\n" + article["content"].to_s + "```" + article["url"]
+headlines_search = 
+HTTParty.get("https://newsapi.org/v2/top-headlines?apiKey=b63ccdb5b78a4731827f2308ec70018c&sortBy=publishedAt&sources=the-washington-post")
 
-  workflow.result
-    .title(article["title"])
-    .subtitle(the_subtitle)
-    .arg(article["url"])
-    .shift('Copy Unfurl to Clipboard', unfurl)
-    .cmd(the_subtitle.to_s[60..-1], article["url"])
+top_headlines = headlines_search["articles"]
+puts query
+if query == nil || query == ""
+  top_headlines.each do |article|
+    the_subtitle = article["description"].to_s
+    unfurl = "```" + article["title"].to_s + "\n\n" + article["content"].to_s + "```" + article["url"]
+
+    workflow.result
+      .title(article["title"])
+      .subtitle(the_subtitle)
+      .arg(article["url"])
+      .shift('Copy Unfurl to Clipboard', unfurl)
+      .cmd(the_subtitle.to_s[60..-1], article["url"])
+  end
+else
+  all_articles.each do |article|
+    the_subtitle = article["description"].to_s
+    unfurl = "```" + article["title"].to_s + "\n\n" + article["content"].to_s + "```" + article["url"]
+
+    workflow.result
+      .title(article["title"])
+      .subtitle(the_subtitle)
+      .arg(article["url"])
+      .shift('Copy Unfurl to Clipboard', unfurl)
+      .cmd(the_subtitle.to_s[60..-1], article["url"])
+  end
 end
 
 if query == "update!"
