@@ -224,7 +224,7 @@ fi</string>
 				<key>argumenttrimmode</key>
 				<integer>1</integer>
 				<key>argumenttype</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
@@ -423,7 +423,7 @@ Hitting shift before hitting enter pastes the discord unfurl.</string>
 		</dict>
 	</dict>
 	<key>version</key>
-	<string>0.651</string>
+	<string>0.66</string>
 	<key>webaddress</key>
 	<string>https://newsapi.org</string>
 </dict>

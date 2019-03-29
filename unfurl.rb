@@ -35,6 +35,7 @@ all_articles.each do |article|
     .subtitle(the_subtitle)
     .arg(article["url"])
     .shift('Copy Unfurl to Clipboard', unfurl)
+    .cmd(the_subtitle.to_s[60..-1], article["url"])
 end
 
 if query == "update!"
