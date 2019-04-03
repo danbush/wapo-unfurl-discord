@@ -35,6 +35,7 @@ if query == nil || query == ""
   top_headlines.each do |article|
     the_subtitle = article["description"].to_s
     unfurl = "```" + article["title"].to_s + "\n\n" + article["content"].to_s + "```" + article["url"]
+    unfurl_secondary = "```" + article["title"].to_s + "\n\n" + the_subtitle + "```" + article["url"]
 
     workflow.result
       .title(article["title"])
@@ -42,6 +43,7 @@ if query == nil || query == ""
       .arg(article["url"])
       .shift('Copy Unfurl to Clipboard', unfurl)
       .cmd(the_subtitle.to_s[60..-1], article["url"])
+      .alt("Copy Succinct Unfurl to Clipboard", unfurl_secondary)
   end
 else
   all_articles.each do |article|
