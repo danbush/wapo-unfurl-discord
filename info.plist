@@ -106,6 +106,39 @@
 				<false/>
 			</dict>
 		</array>
+		<key>922450B2-CC62-49D6-AB00-23E771D4DE3E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8DD4AC75-AE5B-4303-A693-EA5D7299DD7F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>0ABB10EF-3DB1-44EE-8613-8A8F223F2C2D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>85753215-C8BA-498A-92A9-8C219242E84A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>932D137E-9894-45D6-A929-1EF9B7EF29FE</key>
 		<array>
 			<dict>
@@ -121,6 +154,29 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>0ABB10EF-3DB1-44EE-8613-8A8F223F2C2D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>85753215-C8BA-498A-92A9-8C219242E84A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>C26FE9E7-A129-43C1-AD75-E6D64A72DEEF</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8DD4AC75-AE5B-4303-A693-EA5D7299DD7F</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -267,25 +323,6 @@ fi</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>inputstring</key>
-				<string>{query}</string>
-				<key>matchcasesensitive</key>
-				<true/>
-				<key>matchmode</key>
-				<integer>0</integer>
-				<key>matchstring</key>
-				<string>update!</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.filter</string>
-			<key>uid</key>
-			<string>8DD4AC75-AE5B-4303-A693-EA5D7299DD7F</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -336,6 +373,25 @@ fi</string>
 				<key>inputstring</key>
 				<string>{query}</string>
 				<key>matchcasesensitive</key>
+				<true/>
+				<key>matchmode</key>
+				<integer>0</integer>
+				<key>matchstring</key>
+				<string>update!</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.filter</string>
+			<key>uid</key>
+			<string>8DD4AC75-AE5B-4303-A693-EA5D7299DD7F</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>inputstring</key>
+				<string>{query}</string>
+				<key>matchcasesensitive</key>
 				<false/>
 				<key>matchmode</key>
 				<integer>2</integer>
@@ -348,6 +404,70 @@ fi</string>
 			<string>0ABB10EF-3DB1-44EE-8613-8A8F223F2C2D</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>1</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>nyt</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>2</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string>Gathering results...</string>
+				<key>script</key>
+				<string>./nyt.rb "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string>./hltb.rb</string>
+				<key>subtext</key>
+				<string>Example: "mueller" (Hold shift on result to unfurl)</string>
+				<key>title</key>
+				<string>Search New York Times</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>C26FE9E7-A129-43C1-AD75-E6D64A72DEEF</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>5D935144-4864-4D72-93A9-8146112E8B63</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -367,23 +487,6 @@ fi</string>
 			<string>233D9B44-AF96-494C-B7F5-05976CA8F253</string>
 			<key>version</key>
 			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>autopaste</key>
-				<false/>
-				<key>clipboardtext</key>
-				<string>{query}</string>
-				<key>transient</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
-			<key>uid</key>
-			<string>5D935144-4864-4D72-93A9-8146112E8B63</string>
-			<key>version</key>
-			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -562,6 +665,53 @@ fi</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>1</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>bloom</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>2</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string>Gathering results...</string>
+				<key>script</key>
+				<string>./bloom.rb "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string>./hltb.rb</string>
+				<key>subtext</key>
+				<string>Example: "google" (Hold shift on result to unfurl)</string>
+				<key>title</key>
+				<string>Search Bloomberg</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>922450B2-CC62-49D6-AB00-23E771D4DE3E</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>Search your favorite news sources.
@@ -590,7 +740,7 @@ Hitting shift before hitting enter pastes the discord unfurl.</string>
 			<key>xpos</key>
 			<integer>40</integer>
 			<key>ypos</key>
-			<integer>330</integer>
+			<integer>380</integer>
 		</dict>
 		<key>5D935144-4864-4D72-93A9-8146112E8B63</key>
 		<dict>
@@ -611,7 +761,7 @@ Hitting shift before hitting enter pastes the discord unfurl.</string>
 			<key>xpos</key>
 			<integer>40</integer>
 			<key>ypos</key>
-			<integer>210</integer>
+			<integer>260</integer>
 		</dict>
 		<key>8DD4AC75-AE5B-4303-A693-EA5D7299DD7F</key>
 		<dict>
@@ -620,12 +770,19 @@ Hitting shift before hitting enter pastes the discord unfurl.</string>
 			<key>ypos</key>
 			<integer>60</integer>
 		</dict>
+		<key>922450B2-CC62-49D6-AB00-23E771D4DE3E</key>
+		<dict>
+			<key>xpos</key>
+			<integer>40</integer>
+			<key>ypos</key>
+			<integer>620</integer>
+		</dict>
 		<key>932D137E-9894-45D6-A929-1EF9B7EF29FE</key>
 		<dict>
 			<key>xpos</key>
 			<integer>40</integer>
 			<key>ypos</key>
-			<integer>90</integer>
+			<integer>20</integer>
 		</dict>
 		<key>BDA6722B-CA07-4163-914B-3E80415A3DEF</key>
 		<dict>
@@ -638,12 +795,19 @@ Hitting shift before hitting enter pastes the discord unfurl.</string>
 			<key>ypos</key>
 			<integer>20</integer>
 		</dict>
+		<key>C26FE9E7-A129-43C1-AD75-E6D64A72DEEF</key>
+		<dict>
+			<key>xpos</key>
+			<integer>40</integer>
+			<key>ypos</key>
+			<integer>140</integer>
+		</dict>
 		<key>DBFAF2D1-686E-4A08-98DE-2CACC081B3E3</key>
 		<dict>
 			<key>xpos</key>
 			<integer>40</integer>
 			<key>ypos</key>
-			<integer>450</integer>
+			<integer>500</integer>
 		</dict>
 		<key>EA8C37EE-EB1E-45E1-8DCA-F0131DFE1AEF</key>
 		<dict>
@@ -654,7 +818,7 @@ Hitting shift before hitting enter pastes the discord unfurl.</string>
 		</dict>
 	</dict>
 	<key>version</key>
-	<string>0.69</string>
+	<string>0.70</string>
 	<key>webaddress</key>
 	<string>https://newsapi.org</string>
 </dict>

@@ -22,12 +22,12 @@ newsapi = News.new("b63ccdb5b78a4731827f2308ec70018c")
 query = ARGV[0]
 
 initial_search =
-  HTTParty.get("https://newsapi.org/v2/everything?apiKey=b63ccdb5b78a4731827f2308ec70018c&sortBy=publishedAt&sources=the-washington-post&q=" + query)
+  HTTParty.get("https://newsapi.org/v2/everything?apiKey=b63ccdb5b78a4731827f2308ec70018c&sortBy=publishedAt&sources=bloomberg&q=" + query)
 
 all_articles = initial_search["articles"]
 
 headlines_search = 
-HTTParty.get("https://newsapi.org/v2/top-headlines?apiKey=b63ccdb5b78a4731827f2308ec70018c&sortBy=publishedAt&sources=the-washington-post")
+HTTParty.get("https://newsapi.org/v2/top-headlines?apiKey=b63ccdb5b78a4731827f2308ec70018c&sortBy=publishedAt&sources=bloomberg")
 
 top_headlines = headlines_search["articles"]
 

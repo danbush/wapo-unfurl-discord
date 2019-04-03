@@ -22,12 +22,12 @@ newsapi = News.new("b63ccdb5b78a4731827f2308ec70018c")
 query = ARGV[0]
 
 initial_search =
-  HTTParty.get("https://newsapi.org/v2/everything?apiKey=b63ccdb5b78a4731827f2308ec70018c&sortBy=publishedAt&sources=the-washington-post&q=" + query)
+  HTTParty.get("https://newsapi.org/v2/everything?apiKey=b63ccdb5b78a4731827f2308ec70018c&sortBy=publishedAt&sources=the-new-york-times&q=" + query)
 
 all_articles = initial_search["articles"]
 
 headlines_search = 
-HTTParty.get("https://newsapi.org/v2/top-headlines?apiKey=b63ccdb5b78a4731827f2308ec70018c&sortBy=publishedAt&sources=the-washington-post")
+HTTParty.get("https://newsapi.org/v2/top-headlines?apiKey=b63ccdb5b78a4731827f2308ec70018c&sortBy=publishedAt&sources=the-new-york-times")
 
 top_headlines = headlines_search["articles"]
 
@@ -35,29 +35,25 @@ if query == nil || query == ""
   top_headlines.each do |article|
     the_subtitle = article["description"].to_s
     unfurl = "```" + article["title"].to_s + "\n\n" + article["content"].to_s + "```" + article["url"]
-    unfurl_secondary = "```" + article["title"].to_s + "\n\n" + the_subtitle + "```" + article["url"]
 
     workflow.result
       .title(article["title"])
       .subtitle(the_subtitle)
       .arg(article["url"])
-      .shift('Copy Unfurl to Clipboard', unfurl)
+      .shift('Copy to Clipboard', article["url"])
       .cmd(the_subtitle.to_s[60..-1], article["url"])
-      .alt("Copy Succinct Unfurl to Clipboard", unfurl_secondary)
   end
 else
   all_articles.each do |article|
     the_subtitle = article["description"].to_s
     unfurl = "```" + article["title"].to_s + "\n\n" + article["content"].to_s + "```" + article["url"]
-    unfurl_secondary = "```" + article["title"].to_s + "\n\n" + the_subtitle + "```" + article["url"]
 
     workflow.result
       .title(article["title"])
       .subtitle(the_subtitle)
       .arg(article["url"])
-      .shift('Copy Unfurl to Clipboard', unfurl)
+      .shift('Copy to Clipboard', article["url"])
       .cmd(the_subtitle.to_s[60..-1], article["url"])
-      .alt("Copy Succinct Unfurl to Clipboard", unfurl_secondary)
   end
 end
 
@@ -71,6 +67,7 @@ elsif initial_search["totalResults"] < 1
       .title("Can't find any results.")
       .subtitle("Sorry :(")
       .arg(query)
+      .icon("./wsj.jpg")
 end
 
 print workflow.output

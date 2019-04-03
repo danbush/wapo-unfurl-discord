@@ -32,7 +32,7 @@ headlines_search =
 HTTParty.get("https://newsapi.org/v2/top-headlines?apiKey=b63ccdb5b78a4731827f2308ec70018c&sortBy=publishedAt&sources=axios")
 
 top_headlines = headlines_search["articles"]
-puts query
+
 if query == nil || query == ""
   top_headlines.each do |article|
     the_subtitle = article["description"].to_s
